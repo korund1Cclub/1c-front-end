@@ -65,20 +65,20 @@ function Arrows() {
 
     var secArrow = new Path2D();
     secArrow.moveTo(Radius, Radius);
-    secArrow.lineTo(Radius + Radius * 0.7 * Math.sin(secondsAngle), Radius - (Radius * 0.7 * Math.cos(secondsAngle)) );
+    secArrow.lineTo(Radius + Radius * 0.8 * Math.sin(secondsAngle), Radius - (Radius * 0.8 * Math.cos(secondsAngle)) );
     context.strokeStyle = "red";
     context.stroke(secArrow);
 
     var minArrow = new Path2D();
     minArrow.moveTo(Radius, Radius);
-    minArrow.lineTo(Radius + Radius * 0.5 * Math.sin(minutesAngle), Radius - (Radius * 0.5 * Math.cos(minutesAngle)) );
+    minArrow.lineTo(Radius + Radius * 0.7 * Math.sin(minutesAngle), Radius - (Radius * 0.7 * Math.cos(minutesAngle)) );
     context.lineWidth = 3;
     context.strokeStyle = "black";
     context.stroke(minArrow);
 
     var houArrow = new Path2D();
     houArrow.moveTo(Radius, Radius);
-    houArrow.lineTo(Radius + Radius * 0.4 * Math.sin(hoursAngle), Radius - (Radius * 0.4 * Math.cos(hoursAngle)) );
+    houArrow.lineTo(Radius + Radius * 0.5 * Math.sin(hoursAngle), Radius - (Radius * 0.5 * Math.cos(hoursAngle)) );
     context.lineWidth = 5;
     context.strokeStyle = "black";
     context.stroke(houArrow);
