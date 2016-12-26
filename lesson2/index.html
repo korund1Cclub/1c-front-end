@@ -10,7 +10,37 @@
 <body>
     <canvas id="sandbox" width="300" height="300">
 <script>
-    console.log("The zen of Pyton:\n\"Beautifull is better than ugly\"")
+    var string = " The quick brown fox quickly jumps over tha lazy dog. ",
+    modification;
+
+    /*Символы с индексами 0 и 1*/
+    string[0] + string[1];
+
+    /*индекс первого вхождения подстроки или -1, если вхождений нет*/
+    string.indexOf("quick");
+    string.indexOf("Quick");
+    /*Индекс последнего вхождения*/
+    string.lastIndexOf("quick");
+    /*Замена первого вхождения строки*/
+    modification = string.replace("quick", "slow");
+
+    /*Разбиение по разделителю в массив*/
+    var splitted = string.split(" ");
+
+    /*Объединение элементов массива в строку*/
+    splitted.join("-");
+
+    /*Выделение подстроки*/
+    var start = 17, length = 3;
+    string.substr(start, length);
+    /*Приведение в нижний или верхний регистр*/
+    string.toLowerCase();
+    string.toUpperCase();
+
+    /*Удаление пробельных символов с начала и конца*/
+    modification = string.trim();
+    
+
 </script>
 </body>
 </html>
