@@ -22,28 +22,12 @@
     <input type="text" id="field">
 
     <script>
-        var field = document.getElementById("field");
-
-        function isPrime(n){
-            for (var i = 2; i < n; ++i){
-                /*Если N делится на какое-либо из чисел от 2 до т -1, то оно состовное*/
-                if(n % i == 0){
-                    return false;
-                }
-            }
-            /*Если N ни на что не разделислось. то оно простое */
-            return true;
+        function getCaller(){
+            return this;
         }
 
-        field.addEventListener("keydown", function(event){
-            var number, i;
-            /*если нажата клавиша enter*/
-            if (event.which == 13){
-                debugger;
-                number = Number(field.value);
-                alert(isPrime(number) ? "Простое" : "Составное");
-            }
-        });
+        var alice = {name: "Alice", fn: getCaller},
+        bob = {name: "Bob", fn: getCaller};
 
     </script>
 </body></html>
