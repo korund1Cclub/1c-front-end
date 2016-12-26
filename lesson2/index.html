@@ -1,110 +1,49 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html><head>
     <meta charset="utf-8">
     <title>Урок 2</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="sandbox" width="300" height="300">
-<script>
-    var string = " The quick brown fox quickly jumps over tha lazy dog. ",
-    modification;
 
-    /*Символы с индексами 0 и 1*/
-    string[0] + string[1];
+    <input type="text" id="field">
 
-    /*индекс первого вхождения подстроки или -1, если вхождений нет*/
-    string.indexOf("quick");
-    string.indexOf("Quick");
-    /*Индекс последнего вхождения*/
-    string.lastIndexOf("quick");
-    /*Замена первого вхождения строки*/
-    modification = string.replace("quick", "slow");
+    <script>
+        var field = document.getElementById("field");
 
-    /*Разбиение по разделителю в массив*/
-    var splitted = string.split(" ");
+        function isPrime(n){
+            for (var i = 2; i < n; ++i){
+                /*Если N делится на какое-либо из чисел от 2 до т -1, то оно состовное*/
+                if(n % i == 0){
+                    return false;
+                }
+            }
+            /*Если N ни на что не разделислось. то оно простое */
+            return true;
+        }
 
-    /*Объединение элементов массива в строку*/
-    splitted.join("-");
+        field.addEventListener("keydown", function(event){
+            var number, i;
+            /*если нажата клавиша enter*/
+            if (event.which == 13){
+                debugger;
+                number = Number(field.value);
+                alert(isPrime(number) ? "Простое" : "Составное");
+            }
+        });
 
-    /*Выделение подстроки*/
-    var start = 17, length = 3;
-    string.substr(start, length);
-    /*Приведение в нижний или верхний регистр*/
-    string.toLowerCase();
-    string.toUpperCase();
-
-    /*Удаление пробельных символов с начала и конца*/
-    modification = string.trim();
-
-        /*МАТЕМАТИЧЕСКИЕ*/
-    /*Возведение в степень*/
-    Math.pow(2, -3);
-
-    /*Извлечение квадратного корня*/
-    Math.sqrt(9);
-
-    /*Округление вверх*/
-    Math.ceil(1.25);
-
-    /*Округление к ближайшему целому*/
-    Math.round(1.25);
-
-    /*Сигнум*/
-    Math.sign(42);
-
-    /*Максимум и минимум*/
-    Math.max(3, 5);
-    Math.min(2, -1, 5);
-
-    /*Итеративные*/
-    var array = [1, 2, 3, 4, 5];
-
-    array.map(function(x){
-        return x * 2;
-    });
-
-    array.filter(function(x){
-        /*возращаем false или true*/
-        return x % 2 == 1;
-    });
-
-    var copy = [];
-    array.forEach(function(x){
-        /*Добавляем в начало массива*/
-        copy.unshift(x);
-    });
-    copy;
-
-    /*Сортировка и разворот*/
-    var eachArray = [4, 2, 5, 1, 3];
-    eachArray.sort();
-    eachArray.reverse();
-
-    /*Тернарный оператор*/
-    /*<Условие> ? <выражение> : <выражение>*/
-    function getVerdict(temper) {
-        return temper > 0 ? "Вода" : "Лёд";
-    }
-    getVerdict(23);
-
-    (Math.random() ? Math.min : Math.max) (-1, 1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
-</body>
-</html>
+    </script>
+</body></html>
