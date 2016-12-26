@@ -60,6 +60,39 @@
     Math.max(3, 5);
     Math.min(2, -1, 5);
 
+    /*Итеративные*/
+    var array = [1, 2, 3, 4, 5];
+
+    array.map(function(x){
+        return x * 2;
+    });
+
+    array.filter(function(x){
+        /*возращаем false или true*/
+        return x % 2 == 1;
+    });
+
+    var copy = [];
+    array.forEach(function(x){
+        /*Добавляем в начало массива*/
+        copy.unshift(x);
+    });
+    copy;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 </body>
