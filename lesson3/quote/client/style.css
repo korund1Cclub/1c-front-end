@@ -1,0 +1,41 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center; 
+	align-items: center;
+	font-family: Georgia, serif;
+
+}
+
+blockquote {
+	padding: 5px 30px 15px 80px;
+	position: relative;
+	font-size: 1.5em; 
+	text-align: justify;
+	border-left: 15px solid orange;
+	border-radius: 5px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+
+}
+
+blockquote::first-letter { 
+	font-size: 1.5em; 
+	font-weight: bold; 
+	color: orange;
+}
+
+blockquote::before { 
+	content: "\201C"; 
+	font-size: 3em; 
+	font-weight: bold; 
+	color: gray; 
+	position: absolute; 
+	left: 20px;
+	top: 0px;
+
+}
+
