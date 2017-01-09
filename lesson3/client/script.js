@@ -1,23 +1,27 @@
-var button = document.getElementById("request");
-button.addEventListener("click", function(){
-	/*Создаем объект запроса*/
-	var xhr = new XMLHttpRequest();
-	/*Конфигурируем запрос*/
-	xhr.open("GET", "http://localhost:591/", true);
-	/*обработчик изменения состояния запроса*/
-	xhr.onreadystatechange = function(){ 
-		/*если запрос в состояние DONE*/
-		if(this.readyState == this.DONE){
-			/*если сервер вернул ошибку*/
-			if(this.status != 200){
-				console.log("Ошибка: " + this.status);
-			}
-			else{
-				console.log(this.responseText);
-			}
+/* ЧАТИК */
+var field = document.getElementById("field"), 
+	chat = document.getElementById("chat");
+
+/* подключаемся к серверу */
+var ws = new WebSocket("ws://localhost:591/");
+
+/* обработчик входящего сообщения */
+ws.onmessage = function(message){
+	/* добавляем сообщение в начало */
+	chat.value = message.data + "\n" + chat.value;
+};
+
+/* обработчик открытия соединения */
+ws.onopen = function() {
+	field.addEventListener("keydown", function(event){
+		if(event.which == 13){
+			/* отправляем сообщение */
+			ws.send(field.value);
+			/* очищаем текстовое поле */
+			field.value = "";
 		}
-	};
-	/*посылаем запрос*/
-	xhr.send();
-	
-});
+	});
+};
+
+
+
