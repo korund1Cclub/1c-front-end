@@ -16,12 +16,14 @@ mongoClient.connect(url, function(err, db){
         console.log(result);
     });
 	
-	
+	function performActions(collection, data, query) {
+		console.log("Inserting...");
+		collection.insert(data, function() {
+			console.log("Inserted!");
+		});
+		console.log("Deleting...");
+		collection.deleteMany(query);
+	}
 
 });
 
-humans.find({age: { $gt: 0}}).toArray(function(err, documents){
-if(documents.length > 0){
-	console.log(documents[0].name);
-}
-});
