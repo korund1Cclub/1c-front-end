@@ -28,7 +28,7 @@ tinyMCE.init(
 			/* посылаем документ на сервер */
 			ws.send(editor.getContent());
 		}
-		
+		\
 		/* при любых изменениях вызываем sendDocument */
 		editor.on("keyup", sendDocument);
 		editor.on("change", sendDocument);
