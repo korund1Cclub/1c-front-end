@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Наблюдение</title>
+	
+</head>
+
+<body>
+	<div id="app">
+		<p>
+			<input type="text" 
+				  v-model="firstString">
+		</p>
+		<p>
+			<input type="text" 
+				  v-model="secondString">
+		</p>
+		<p>
+			Количество изменений строк: {{ changesCount }}
+		</p>
+		
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

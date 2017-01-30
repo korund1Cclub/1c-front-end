@@ -1,0 +1,45 @@
+input {
+	width: 100px;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.math {
+	font-size: 2rem;
+	display: flex;
+	justify-content: center;
+	margin: 30px 0;
+}
+
+.math--bold {
+	font-weight: bold;
+}
+
+.math__space {
+	width: 120px;
+}
+
+#app {
+	width: 100%;
+	display: flex;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.side--left,
+.side--right {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

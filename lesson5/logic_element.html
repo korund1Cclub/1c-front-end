@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Логический элемент</title>
+		<style>
+			html, body {height: 100%;margin: 0;}
+			body {display: flex; justify-content: center; align-items: center;}
+			input[type="checkbox"]{transform: scale(5) translateY(-4px); margin: 0 20px;}
+			.schema {font-size: 5rem; font-weight: bold;}
+			.schema__result {text-align: center;}
+			.schema__result--true {color: green;}
+			.schema__result--false {color: red;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="app" class="schema">
+			<div>
+				<input type="checkbox" v-model="left">
+				<span>$$</span>
+				<input type="checkbox" v-model="right">
+			</div>
+			<div class="schema__result shema__result--{{ left && right}}">
+			{{ left && right }}
+			</div>
+		</div>
+		<script src="https://vuejs.org/js/vue.js"></script>
+		<script>
+			
+			var vm = new Vue({
+				el: "#app",
+				data: {
+					left: false,
+					right: false,
+				}
+			});
+		</script>
+	</body>
+</html>

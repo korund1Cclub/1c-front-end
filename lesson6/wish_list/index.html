@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Список дел</title>
+	
+</head>
+
+<body>
+	<div id="app">
+		<input type="text" 
+			   v-model="thing" 
+			   v-on:keydown.enter="addItem($event)">
+		
+		<ol>
+			<li v-for="item of list" track-by="$index"
+				v-on:click="removeItem($index)">
+				{{ item }}
+			</li>
+		</ol>
+		
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

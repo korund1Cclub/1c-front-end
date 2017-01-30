@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Квадратные уравнения</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="side--left">
+			<div>
+				<div class="math math--bold">
+					<span>
+						x<sup>2</sup> +
+						<input type="number" number v-model="b"> x +
+						<input type="number" number v-model="c"> = 0
+					 </span>
+				</div>
+				<div class="math">
+					D = {{ D }}
+				</div>
+				<div class="math" style="height: 1.4em;">
+					<template v-if="D > 0">
+						<span>
+							x<sub>l</sub> = {{ (-b - Math.sqrt(D)) / 2 | fixNumber }}
+						 </span>
+						<span class="math__space"></span>
+						<span>x<sub>r</sub> = {{ (-b + Math.sqrt(D)) / 2 | fixNumber }}
+ 						</span>
+					</template>
+					<template v-if="D == 0">
+						x = {{ - b / 2 | fixNumber }}
+					</template>
+					<template v-if="D < 0">
+						Решений нет
+					</template>
+				</div>
+			</div>
+		</div>
+		<div class="side--right">
+			<span id="plot"></span>
+		</div>
+	</div>
+	<script src="https://vuejs.org/js/vue.js"></script>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+	<script src="https://wzrd.in/standalone/function-plot@1.17.0"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Вычисляемые данные</title>
+	
+</head>
+
+<body>
+	<div id="app">
+		<select v-model="numbers" multiple size="5">
+			<option v-for="i in 5">
+				{{ i + 1 }}
+			</option>
+		</select>
+		<p>Среднее арифметическое: {{ average }}</p>
+		
+	</div>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
